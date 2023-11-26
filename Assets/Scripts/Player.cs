@@ -134,6 +134,7 @@ public class Player : MonoBehaviour
             Destroy(other.gameObject);
             Instantiate(laserGun, shootingPoint.transform.position, transform.rotation, transform);
             laserActive = true;
+            gm.AddScore();
             laserTimer = 0;
         }
     }

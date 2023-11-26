@@ -200,17 +200,15 @@ public class GameManager : MonoBehaviour
         Instantiate(explosionPrefab, player.transform.position, Quaternion.identity);  //el player explota 
         Destroy(player);
         
+        endMsg.text = "GAME OVER";
+        
         if (score > bestScore)
         {
             bestScore = score;                              //es guarda la best score si s'ha superat l'anterior best score i es mostren missatges
             PlayerPrefs.SetInt("bestScore", bestScore);
-            endMsg.text = "VICTORY!";
             nbs.text = "New Best Score: " + bestScore;
         }
-        else
-        {
-            endMsg.text = "GAME OVER";
-        }
+       
         
         restartBtn.SetActive(true);         //s'activa el botó per tornar a jugar
         
